@@ -1,3 +1,22 @@
-<h1>User X</h1>
+<h1>User <%= current_user.email %></h1>
 
-<p><%= link_to 'Auth with Twitter', auth_at_provider_path(:provider => :twitter) %></p>
+<p><%= link_to 'Link Twitter', auth_at_provider_path(:provider => :twitter) %></p>
+
+<% if current_user.twitter_authentication %>
+  <p>Your followers:</p>
+  <ul>
+    <% current_user.twitter_followers.each do |follower| %>
+      <li><%= follower.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p><%= link_to 'Link Google', auth_at_provider_path(:provider => :google) %></p>
+
+<% if current_user.google_authentication %>
+  <ul>
+    <% current_user.gmail_threads.each do |thread| %>
+      <li><%= thread.snippet %></li>
+    <% end %>
+  </ul>
+<% end %>

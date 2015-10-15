@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015031638) do
+ActiveRecord::Schema.define(version: 20151015142613) do
 
   create_table "authentications", force: :cascade do |t|
-    t.integer  "user_id",      null: false
-    t.string   "provider",     null: false
-    t.string   "uid",          null: false
-    t.string   "oauth_token"
-    t.string   "oauth_secret"
+    t.integer  "user_id",             null: false
+    t.string   "provider",            null: false
+    t.string   "uid",                 null: false
+    t.string   "access_token"
+    t.string   "access_token_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
