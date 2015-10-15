@@ -11,8 +11,10 @@
 <nav>
   <% if current_user %>
     Logged in as <%= current_user.email %> |
+    <%= link_to "Home", user_path(current_user) %> |
     <%= link_to "Logout", logout_path, method: :delete %>
   <% else %>
+    <%= link_to "Home", root_path %> |
     <%= link_to "Sign Up", new_user_path %> |
     <%= link_to "Login", new_session_path %>
   <% end %>
