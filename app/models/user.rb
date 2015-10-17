@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def google_client
+    # Application name is what you named it in Google Developer Console
     google_api_client = Google::APIClient.new({
       application_name: 'fgelsomini'
     })
