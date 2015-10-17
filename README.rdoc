@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is an example of using Sorcery to provide basic authentication & sign up for your app, and using the external module within Sorcery to add provider-specific authentications (i.e. Twitter, Google). This app also assumes you do NOT need Sorcery to login or sign up to your app from any provider.
 
-Things you may want to cover:
+After a normal user login, the app will prompt the user to authenticate with Twitter or Google, and save an oauth access token for future use of the API's. Bear in mind, each API will handle access differently. For example, during the OAuth process, Twitter issues an access token which does not expire. Google's access token however, will expire after 60 minutes, requiring you to use a "refresh token" to regain access.
 
-* Ruby version
+Notes:
 
-* System dependencies
+* Be sure to the application and appropriate settings in Twitter or Google developer area
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Before going into production, you should encrypt the access tokens
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
